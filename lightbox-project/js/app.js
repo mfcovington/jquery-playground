@@ -1,20 +1,23 @@
 var $overlay = $('<div id="overlay"></div>');
+var $image = $('<img>');
+var $label = $('<p></p>')
+
+$overlay.append($image);
+$overlay.append($label);
 $('body').append($overlay);
 
-$("#imageGallery a").click(function () {
+$('#imageGallery a').click(function() {
     event.preventDefault();
-    var href = $(this).attr("href");
-    var alt = $(this).children('img').attr('alt');
-    console.log(href);
-    console.log(alt);
+    var imageLocation = $(this).attr('href');
+    var imageText = $(this).children('img').attr('alt');
+    console.log(imageLocation);
+    console.log(imageText);
 
     $overlay.show();
-    $overlay.append('<img src="' + href + '">');
-    $overlay.append('<p>' + alt + '</p>');
+    $image.attr('src', imageLocation);
+    $label.text(imageText);
 });
 
 $overlay.click(function() {
-    $(this).children('img').remove();
-    $(this).children('p').remove();
     $(this).hide();
 });
