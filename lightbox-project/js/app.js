@@ -10,8 +10,6 @@ $('#imageGallery a').click(function() {
     event.preventDefault();
     var imageLocation = $(this).attr('href');
     var imageText = $(this).children('img').attr('alt');
-    console.log(imageLocation);
-    console.log(imageText);
 
     $overlay.show();
     $image.attr('src', imageLocation);
