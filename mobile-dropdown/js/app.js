@@ -9,7 +9,7 @@ $('#menu li').each(function() {
 
     var $option = $('<option></option>');
     $option.text(text);
-    $option.attr('value', href);
+    $option.val(href);
 
     if ($(this).hasClass('selected')) {
         $option.prop('selected', 'selected');
@@ -22,14 +22,14 @@ $('#menu li').each(function() {
 var $form = $('<form method="link"></form>');
 var $button = $('<button>Go</button>');
 
-var selectedHref = $select.children(":selected").attr('value');
+var selectedHref = $select.children(":selected").val();
 $form.attr('action', selectedHref);
 
 $form.append($button);
 $('#menu').append($form);
 
 $select.change(function() {
-    var selectedHref = $select.children(":selected").attr('value');
+    var selectedHref = $select.children(":selected").val();
     var selectedLabel = $select.children(":selected").text();
 
     var message = 'Selection changed to ' + selectedLabel;
