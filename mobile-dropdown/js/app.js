@@ -19,21 +19,9 @@ $('#menu li').each(function() {
     $select.append($option);
 });
 
-var $form = $('<form method="link"></form>');
 var $button = $('<button>Go</button>');
+$('#menu').append($button);
 
-var selectedHref = $select.children(":selected").val();
-$form.attr('action', selectedHref);
-
-$form.append($button);
-$('#menu').append($form);
-
-$select.change(function() {
-    var selectedHref = $select.children(":selected").val();
-    var selectedLabel = $select.children(":selected").text();
-
-    var message = 'Selection changed to ' + selectedLabel;
-    message += ' (' + selectedHref + ')';
-    console.log(message);
-    $form.attr('action', selectedHref);
+$button.click(function() {
+    window.location = $select.val();
 });
