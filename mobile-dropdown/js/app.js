@@ -27,3 +27,12 @@ $form.attr('action', selectedHref);
 
 $form.append($button);
 $('#menu').append($form);
+
+$select.change(function() {
+    var selectedHref = $select.children(":selected").attr('value');
+    var selectedLabel = $select.children(":selected").text();
+
+    var message = 'Selection changed to ' + selectedLabel;
+    message += ' (' + selectedHref + ')';
+    console.log(message);
+});
