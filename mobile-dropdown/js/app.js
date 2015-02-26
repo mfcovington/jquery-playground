@@ -35,4 +35,5 @@ $select.change(function() {
     var message = 'Selection changed to ' + selectedLabel;
     message += ' (' + selectedHref + ')';
     console.log(message);
+    $form.attr('action', selectedHref);
 });
