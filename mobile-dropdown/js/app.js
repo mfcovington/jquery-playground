@@ -7,12 +7,14 @@ $('#menu li').each(function() {
     var text = $menuLink.text();
     var href = $menuLink.attr('href');
 
-    if ($(this).hasClass('selected')) {
-        console.log(text + ' (' + href + ') is selected');
-    }
-
     var $option = $('<option></option>');
     $option.text(text);
     $option.attr('value', href);
+
+    if ($(this).hasClass('selected')) {
+        $option.prop('selected', 'selected');
+        console.log(text + ' (' + href + ') is selected');
+    }
+
     $select.append($option);
 });
