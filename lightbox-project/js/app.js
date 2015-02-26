@@ -8,12 +8,14 @@ $('body').append($overlay);
 
 $('#imageGallery a').click(function() {
     event.preventDefault();
+
     var imageLocation = $(this).attr('href');
     var imageText = $(this).children('img').attr('alt');
 
-    $overlay.show();
     $image.attr('src', imageLocation);
     $label.text(imageText);
+
+    $overlay.show();
 });
 
 $overlay.click(function() {
