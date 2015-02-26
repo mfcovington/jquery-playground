@@ -18,3 +18,12 @@ $('#menu li').each(function() {
 
     $select.append($option);
 });
+
+var $form = $('<form method="link"></form>');
+var $button = $('<button>Go</button>');
+
+var selectedHref = $select.children(":selected").attr('value');
+$form.attr('action', selectedHref);
+
+$form.append($button);
+$('#menu').append($form);
