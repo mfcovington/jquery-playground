@@ -1,0 +1,66 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+body {
+	background: #fff;
+}
+
+#menu {
+	background: #384047;
+	height: 60px;
+	padding: 0 5px 0;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	display: inline-block;
+	width: 84px;
+	text-align: center;
+}
+
+ul li a {
+	color: #fff;
+	width: 100%;
+	line-height: 60px;
+	text-decoration: none;
+}
+
+ul li.selected {
+	background: #fff;
+}
+
+ul li.selected a {
+	color: #384047;
+}
+
+select {
+	width: 84%;
+	margin: 11px  0 11px 2%;
+	float: left;
+}
+
+button {
+	display: inline-block;
+	line-height: 18px;
+	padding: 0 5px;
+	margin: 11px 2% 11px 0;
+	float: right;
+	width: 10%;
+}
+h1 {
+	margin: 40px 0 10px;
+	text-align: center;
+	color: #384047;
+}
+p {
+	text-align: center;
+	color: #777;
+}
+/** Start Coding Here **/
