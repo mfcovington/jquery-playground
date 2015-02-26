@@ -2,12 +2,12 @@ var $select = $('<select></select>');
 
 $('#menu').append($select);
 
-var menuLinks = $('#menu a');
+var menuList = $('#menu li');
 
-for (var i = 0; i < menuLinks.length; i++) {
-    var $currentLink = $(menuLinks[i]);
-    var text = $currentLink.text();
-    var href = $currentLink.attr('href');
+for (var i = 0; i < menuList.length; i++) {
+    var $menuLink = $(menuList[i]).children('a');
+    var text = $menuLink.text();
+    var href = $menuLink.attr('href');
 
     var $option = $('<option></option>');
     $option.text(text);
