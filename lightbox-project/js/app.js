@@ -12,3 +12,9 @@ $("#imageGallery a").click(function () {
     $overlay.append('<img src="' + href + '">');
     $overlay.append('<p>' + alt + '</p>');
 });
+
+$overlay.click(function() {
+    $(this).children('img').remove();
+    $(this).children('p').remove();
+    $(this).hide();
+});
