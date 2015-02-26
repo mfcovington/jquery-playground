@@ -1,3 +1,6 @@
+var $overlay = $('<div id="overlay"></div>');
+$('body').append($overlay);
+
 $("#imageGallery a").click(function () {
     event.preventDefault();
     var href = $(this).attr("href");
