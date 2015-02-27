@@ -3,6 +3,9 @@ $('form span').hide();
 var $passwordInput = $('#password');
 var $passwordConfirm = $('#confirm_password');
 
+var $submitButton = $('input[type="submit"]');
+$submitButton.prop('disabled', true).css('background', 'gray');
+
 function checkPasswordLength() {
     if ($passwordInput.val().length > 8) {
         $passwordInput.siblings('span').hide();
@@ -12,7 +15,7 @@ function checkPasswordLength() {
     }
 }
 
-function checkPasswordConfirm(argument) {
+function checkPasswordConfirm() {
     if ($passwordInput.val() === $passwordConfirm.val()) {
         $passwordConfirm.siblings('span').hide();
     }
@@ -21,11 +24,25 @@ function checkPasswordConfirm(argument) {
     }
 }
 
+function isSubmittable() {
+    if ($passwordInput.val().length > 8 && $passwordInput.val() === $passwordConfirm.val()) {
+        $submitButton.prop('disabled', false).css('background', '#2F558E');
+    }
+    else {
+        $submitButton.prop('disabled', true).css('background', 'gray');
+    }
+}
+
 $passwordInput.keyup(function() {
     checkPasswordLength();
     checkPasswordConfirm();
+    isSubmittable();
 }).focus(function() {
     checkPasswordLength();
+    isSubmittable();
 });
 
-$passwordConfirm.keyup(checkPasswordConfirm);
+$passwordConfirm.keyup(function() {
+    checkPasswordConfirm();
+    isSubmittable();
+});
