@@ -67,7 +67,7 @@ span:after {
   margin-top: -8px;
 }
 input[type="submit"] {
-  background: #2F558E;
+  background: gray;
   box-shadow: 0 3px 0 0 #1D3C6A;
   border-radius: 5px;
   border: none;

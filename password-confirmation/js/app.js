@@ -2,7 +2,7 @@ var $passwordInput = $('#password');
 var $passwordConfirm = $('#confirm_password');
 
 var $submitButton = $('input[type="submit"]');
-$submitButton.prop('disabled', true).css('background', 'gray');
+$submitButton.prop('disabled', true)
 
 function checkPasswordLength() {
     if ($passwordInput.val().length > 8) {
