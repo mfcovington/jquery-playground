@@ -1,3 +1,5 @@
+var currentColor = $('.controls .selected').css('background-color');
+
 $('.controls li').click(function() {
     deselectColors();
     selectColor($(this));
@@ -23,6 +25,7 @@ function deselectColors() {
 
 function selectColor($newColor) {
     $newColor.addClass('selected');
+    currentColor = $newColor.css('background-color');
 }
 
 function sliderEvent() {
