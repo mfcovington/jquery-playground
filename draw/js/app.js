@@ -2,7 +2,7 @@ $('body').disableSelection();
 
 var currentColor = $('.controls .selected').css('background-color');
 
-var $sliderInputs = $('.sliders input');
+var $sliderInputs = $('.sliders input[type=range]');
 resetSlidersAndSwatch();
 
 $('.controls').on('click', 'li', function() {
