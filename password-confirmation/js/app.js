@@ -24,17 +24,13 @@ function checkPasswordConfirm(argument) {
 $passwordInput.keyup(function() {
     checkPasswordLength();
     checkPasswordConfirm();
-});
-
-$passwordConfirm.keyup(function() {
-    checkPasswordConfirm();
-});
-
-$passwordInput.focus(function() {
+}).focus(function() {
     checkPasswordLength();
     checkPasswordConfirm();
 });
 
-$passwordConfirm.focus(function() {
-    checkPasswordConfirm();
-});
+$passwordConfirm.keyup(
+    checkPasswordConfirm
+).focus(
+    checkPasswordConfirm
+);
