@@ -22,8 +22,16 @@ $('.controls').on('click', 'li', function() {
 });
 
 $('.controls').on('dblclick', 'li', function() {
-    selectColor($(this).siblings(':first'));
-    $(this).remove();
+    var $colorToRemove = $(this);
+
+    if ($colorToRemove.siblings(':first').length > 0) {
+        selectColor($colorToRemove.siblings(':first'));
+    }
+    else {
+        selectColor($colorToRemove);
+    }
+
+    $colorToRemove.remove();
 });
 
 $('#revealColorSelect').click(function() {
