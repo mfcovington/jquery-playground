@@ -12,7 +12,7 @@ $('#menu li').each(function() {
     $option.val(href);
 
     if ($(this).hasClass('selected')) {
-        $option.prop('selected', 'selected');
+        $option.prop('selected', true);
         console.log(text + ' (' + href + ') is selected');
     }
 
