@@ -47,13 +47,10 @@ function selectColor($newColor) {
 }
 
 function sliderEvent() {
-    var rgbObject = {};
-    $sliderInputs.each(function() {
-        var color = $(this).attr('id');
-        var value = $(this).val();
-        rgbObject[color] = value;
-    });
-    updateNewColor(rgbObject);
+    var r = $('#red').val();
+    var g = $('#green').val();
+    var b = $('#blue').val();
+    $('#newColor').css('background-color', rgbToString(r, g, b))
 }
 
 function resetSlidersAndSwatch() {
@@ -63,15 +60,9 @@ function resetSlidersAndSwatch() {
     $('#newColor').css('background-color', 'rgb(0, 0, 0)')
 }
 
-function updateNewColor(rgbObject) {
-    var rgb = rgbObjectToString(rgbObject);
-    console.log(rgb);
-    $('#newColor').css('background-color', rgb);
-}
-
-function rgbObjectToString(rgbObject) {
+function rgbToString(r, g, b) {
     var rgb = 'rgb(';
-    rgb += [rgbObject['red'], rgbObject['green'], rgbObject['blue']].join();
+    rgb += [r, g, b].join();
     rgb += ')';
     return rgb;
 }
