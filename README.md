@@ -4,7 +4,7 @@ I'm learning JavaScript and jQuery. Here are some of my mini projects for learni
 
 ## Simple Lightbox
 
-I learned how to make a [simple lightbox](http://mfcovington.github.io/jquery-playground/lightbox-project/index.html) in Treehouse's [jQuery Basics](http://teamtreehouse.com/library/jquery-basics) course.
+I learned how to make a [simple lightbox](http://mfcovington.github.io/jquery-playground/lightbox/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-simple-lightbox/) course.
 
 ## Mobile Dropdown Menu
 
