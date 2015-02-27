@@ -7,6 +7,7 @@ resetSlidersAndSwatch();
 
 var $canvas = $('canvas');
 var context = $canvas[0].getContext('2d');
+context.strokeStyle = currentColor;
 
 var lastMouseEvent;
 var mouseDown = false;
@@ -81,7 +82,7 @@ $canvas.mousedown(function(event) {
         context.beginPath();
         context.moveTo(lastMouseEvent.offsetX, lastMouseEvent.offsetY);
         context.lineTo(event.offsetX, event.offsetY);
-        // context.strokeStyle = currentColor;
+        context.strokeStyle = currentColor;
         context.stroke();
         lastMouseEvent = event;
     }
