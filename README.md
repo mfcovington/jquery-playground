@@ -14,4 +14,4 @@ I learned how to make a [mobile dropdown menu](http://mfcovington.github.io/jque
 
 I learned how to make a [password confirmation form](http://mfcovington.github.io/jquery-playground/password-confirmation/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-password-confirmation-form/) course.
 
-*Version 0.2.2*
+*Version 0.3.0*
