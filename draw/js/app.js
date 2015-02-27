@@ -95,4 +95,7 @@ $canvas.mousedown(function(event) {
     lastMouseEvent = event;
     mouseOnCanvas = true;
 });
+
+$('html').mouseup(function() {
+    mouseDown = false;
 });
