@@ -26,11 +26,6 @@ $passwordInput.keyup(function() {
     checkPasswordConfirm();
 }).focus(function() {
     checkPasswordLength();
-    checkPasswordConfirm();
 });
 
-$passwordConfirm.keyup(
-    checkPasswordConfirm
-).focus(
-    checkPasswordConfirm
-);
+$passwordConfirm.keyup(checkPasswordConfirm);
