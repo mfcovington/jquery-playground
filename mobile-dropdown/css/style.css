@@ -63,4 +63,14 @@ p {
   text-align: center;
   color: #777;
 }
-/** Start Coding Here **/
+
+@media (max-width: 568px) {
+  #menu ul {
+    display: none;
+  }
+}
+@media (min-width: 569px) {
+  #menu select, #menu button {
+    display: none;
+  }
+}
