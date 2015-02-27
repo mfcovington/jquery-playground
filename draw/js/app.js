@@ -11,6 +11,7 @@ context.strokeStyle = currentColor;
 
 var lastMouseEvent;
 var mouseDown = false;
+var mouseOnCanvas = false;
 
 $('.controls').on('click', 'li', function() {
     deselectColors();
@@ -78,7 +79,7 @@ $canvas.mousedown(function(event) {
     lastMouseEvent = event;
     mouseDown = true;
 }).mousemove(function(event) {
-    if (mouseDown) {
+    if (mouseDown && mouseOnCanvas) {
         context.beginPath();
         context.moveTo(lastMouseEvent.offsetX, lastMouseEvent.offsetY);
         context.lineTo(event.offsetX, event.offsetY);
@@ -89,5 +90,9 @@ $canvas.mousedown(function(event) {
 }).mouseup(function() {
     mouseDown = false;
 }).mouseleave(function() {
-    $canvas.mouseup();
+    mouseOnCanvas = false;
+}).mouseenter(function() {
+    lastMouseEvent = event;
+    mouseOnCanvas = true;
+});
 });
