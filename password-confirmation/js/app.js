@@ -1,3 +1,5 @@
+$('form span').hide();
+
 var $passwordInput = $('#password');
 var $passwordConfirm = $('#confirm_password');
 
@@ -25,5 +27,14 @@ $passwordInput.keyup(function() {
 });
 
 $passwordConfirm.keyup(function() {
+    checkPasswordConfirm();
+});
+
+$passwordInput.focus(function() {
+    checkPasswordLength();
+    checkPasswordConfirm();
+});
+
+$passwordConfirm.focus(function() {
     checkPasswordConfirm();
 });
