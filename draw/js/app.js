@@ -8,6 +8,11 @@ $('.controls').on('click', 'li', function() {
     selectColor($(this));
 });
 
+$('.controls').on('dblclick', 'li', function() {
+    selectColor($(this).siblings(':first'));
+    $(this).remove();
+});
+
 $('#revealColorSelect').click(function() {
     $('#colorSelect').toggle();
 });
