@@ -1,8 +1,13 @@
+var $usernameInput = $('#username');
 var $passwordInput = $('#password');
 var $passwordConfirm = $('#confirm_password');
 
 var $submitButton = $('input[type="submit"]');
 enableSubmitEvent();
+
+function isUsernameValid() {
+    return $usernameInput.val().length > 0;
+}
 
 function isPasswordValid() {
     return $passwordInput.val().length > 8;
@@ -13,7 +18,7 @@ function isPasswordConfirmed() {
 }
 
 function canSubmit() {
-    return isPasswordValid() && isPasswordConfirmed();
+    return isPasswordValid() && isPasswordConfirmed() && isUsernameValid();
 }
 
 function passwordEvent() {
@@ -42,6 +47,8 @@ function enableSubmitEvent() {
         $submitButton.prop('disabled', true).css('background', 'gray');
     }
 }
+
+$usernameInput.keyup(enableSubmitEvent);
 
 $passwordInput.keyup(function() {
     passwordEvent();
