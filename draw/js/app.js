@@ -99,6 +99,14 @@ $canvas.mousedown(function(event) {
     mouseOnCanvas = true;
 });
 
+$canvas.click(function(event) {
+    context.beginPath();
+    context.moveTo(event.offsetX, event.offsetY);
+    context.lineTo(event.offsetX + 0.1, event.offsetY);
+    context.strokeStyle = currentColor;
+    context.stroke();
+});
+
 $('html').mouseup(function() {
     mouseDown = false;
 });
