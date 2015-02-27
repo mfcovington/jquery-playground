@@ -1,5 +1,8 @@
 var currentColor = $('.controls .selected').css('background-color');
 
+var $sliderInputs = $('.sliders input');
+resetSlidersAndSwatch();
+
 $('.controls').on('click', 'li', function() {
     deselectColors();
     selectColor($(this));
@@ -22,8 +25,6 @@ $('#addNewColor').click(function() {
 
     resetSlidersAndSwatch();
 });
-
-var $sliderInputs = $('.sliders input');
 
 $sliderInputs.change(sliderEvent);
 
@@ -52,7 +53,7 @@ function resetSlidersAndSwatch() {
     $sliderInputs.each(function() {
         $(this).val(0);
     });
-    $('#newColor').css('background-color', '')
+    $('#newColor').css('background-color', 'rgb(0, 0, 0)')
 }
 
 function updateNewColor(rgbObject) {
