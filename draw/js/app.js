@@ -1,6 +1,6 @@
 var currentColor = $('.controls .selected').css('background-color');
 
-$('.controls li').click(function() {
+$('.controls').on('click', 'li', function() {
     deselectColors();
     selectColor($(this));
 });
