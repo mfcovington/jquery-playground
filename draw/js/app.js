@@ -1,4 +1,4 @@
-$('body').disableSelection();
+$('html').disableSelection();
 
 var currentColor = $('.controls .selected').css('background-color');
 
