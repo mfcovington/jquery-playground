@@ -11,6 +11,14 @@ $('#revealColorSelect').click(function() {
 
 $('#addNewColor').click(function() {
     $('#colorSelect').hide();
+
+    var newColor = $('#newColor').css('background-color');
+    var $newItem = $('<li></li>');
+
+    $newItem.css('background-color', newColor);
+    deselectColors();
+    selectColor($newItem);
+    $('.controls ul').append($newItem);
 });
 
 var $sliderInputs = $('.sliders input');
