@@ -6,4 +6,8 @@ I'm learning JavaScript and jQuery. Here are some of my mini projects for learni
 
 I learned how to make a [simple lightbox](http://mfcovington.github.io/jquery-playground/lightbox-project/index.html) in Treehouse's [jQuery Basics](http://teamtreehouse.com/library/jquery-basics) course.
 
+## Mobile Dropdown Menu
+
+I learned how to make a [mobile dropdown menu](http://mfcovington.github.io/jquery-playground/mobile-dropdown/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-mobile-drop-down-menu/) course. Change the width of the window to switch between the mobile and non-mobile menu versions.
+
 *Version 0.1.0*
