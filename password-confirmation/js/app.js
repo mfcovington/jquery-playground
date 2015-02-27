@@ -4,8 +4,16 @@ var $passwordConfirm = $('#confirm_password');
 var $submitButton = $('input[type="submit"]');
 $submitButton.prop('disabled', true)
 
+function isPasswordValid() {
+    return $passwordInput.val().length > 8;
+}
+
+function isPasswordConfirmed() {
+    return $passwordInput.val() === $passwordConfirm.val();
+}
+
 function checkPasswordLength() {
-    if ($passwordInput.val().length > 8) {
+    if (isPasswordValid()) {
         $passwordInput.siblings('span').hide();
     }
     else {
@@ -14,7 +22,7 @@ function checkPasswordLength() {
 }
 
 function checkPasswordConfirm() {
-    if ($passwordInput.val() === $passwordConfirm.val()) {
+    if (isPasswordConfirmed()) {
         $passwordConfirm.siblings('span').hide();
     }
     else {
@@ -23,7 +31,7 @@ function checkPasswordConfirm() {
 }
 
 function isSubmittable() {
-    if ($passwordInput.val().length > 8 && $passwordInput.val() === $passwordConfirm.val()) {
+    if (isPasswordValid() && isPasswordConfirmed()) {
         $submitButton.prop('disabled', false).css('background', '#2F558E');
     }
     else {
