@@ -1,5 +1,3 @@
-$('form span').hide();
-
 var $passwordInput = $('#password');
 var $passwordConfirm = $('#confirm_password');
 
