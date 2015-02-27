@@ -12,7 +12,7 @@ function isPasswordConfirmed() {
     return $passwordInput.val() === $passwordConfirm.val();
 }
 
-function checkPasswordLength() {
+function passwordEvent() {
     if (isPasswordValid()) {
         $passwordInput.siblings('span').hide();
     }
@@ -21,7 +21,7 @@ function checkPasswordLength() {
     }
 }
 
-function checkPasswordConfirm() {
+function confirmPasswordEvent() {
     if (isPasswordConfirmed()) {
         $passwordConfirm.siblings('span').hide();
     }
@@ -30,7 +30,7 @@ function checkPasswordConfirm() {
     }
 }
 
-function isSubmittable() {
+function enableSubmitEvent() {
     if (isPasswordValid() && isPasswordConfirmed()) {
         $submitButton.prop('disabled', false).css('background', '#2F558E');
     }
@@ -40,15 +40,15 @@ function isSubmittable() {
 }
 
 $passwordInput.keyup(function() {
-    checkPasswordLength();
-    checkPasswordConfirm();
-    isSubmittable();
+    passwordEvent();
+    confirmPasswordEvent();
+    enableSubmitEvent();
 }).focus(function() {
-    checkPasswordLength();
-    isSubmittable();
+    passwordEvent();
+    enableSubmitEvent();
 });
 
 $passwordConfirm.keyup(function() {
-    checkPasswordConfirm();
-    isSubmittable();
+    confirmPasswordEvent();
+    enableSubmitEvent();
 });
