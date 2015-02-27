@@ -1,3 +1,5 @@
+$('body').disableSelection();
+
 var currentColor = $('.controls .selected').css('background-color');
 
 var $sliderInputs = $('.sliders input');
