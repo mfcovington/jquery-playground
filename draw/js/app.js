@@ -33,7 +33,7 @@ $('#addNewColor').click(function() {
     resetSlidersAndSwatch();
 });
 
-$sliderInputs.change(sliderEvent);
+$sliderInputs.on('input', sliderEvent);
 
 function deselectColors() {
     $('.controls li').each(function() {
