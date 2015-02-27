@@ -6,6 +6,22 @@ var $submitButton = $('input[type="submit"]');
 $usernameInput.focus();
 enableSubmitEvent();
 
+$usernameInput.keyup(enableSubmitEvent);
+
+$passwordInput.keyup(function() {
+    passwordEvent();
+    confirmPasswordEvent();
+    enableSubmitEvent();
+}).focus(function() {
+    passwordEvent();
+    enableSubmitEvent();
+});
+
+$passwordConfirm.keyup(function() {
+    confirmPasswordEvent();
+    enableSubmitEvent();
+});
+
 function isUsernameValid() {
     return $usernameInput.val().length > 0;
 }
@@ -48,19 +64,3 @@ function enableSubmitEvent() {
         $submitButton.prop('disabled', true).css('background', 'gray');
     }
 }
-
-$usernameInput.keyup(enableSubmitEvent);
-
-$passwordInput.keyup(function() {
-    passwordEvent();
-    confirmPasswordEvent();
-    enableSubmitEvent();
-}).focus(function() {
-    passwordEvent();
-    enableSubmitEvent();
-});
-
-$passwordConfirm.keyup(function() {
-    confirmPasswordEvent();
-    enableSubmitEvent();
-});
