@@ -5,6 +5,12 @@ var currentColor = $('.controls .selected').css('background-color');
 var $sliderInputs = $('.sliders input[type=range]');
 resetSlidersAndSwatch();
 
+var $canvas = $('canvas');
+var context = $canvas[0].getContext('2d');
+
+var lastMouseEvent;
+var mouseDown = false;
+
 $('.controls').on('click', 'li', function() {
     deselectColors();
     selectColor($(this));
@@ -66,3 +72,19 @@ function rgbToString(r, g, b) {
     rgb += ')';
     return rgb;
 }
+
+$canvas.mousedown(function(event) {
+    lastMouseEvent = event;
+    mouseDown = true;
+}).mousemove(function(event) {
+    if (mouseDown) {
+        context.beginPath();
+        context.moveTo(lastMouseEvent.offsetX, lastMouseEvent.offsetY);
+        context.lineTo(event.offsetX, event.offsetY);
+        // context.strokeStyle = currentColor;
+        context.stroke();
+        lastMouseEvent = event;
+    }
+}).mouseup(function() {
+    mouseDown = false;
+});
