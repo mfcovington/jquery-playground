@@ -10,4 +10,4 @@ I learned how to make a [simple lightbox](http://mfcovington.github.io/jquery-pl
 
 I learned how to make a [mobile dropdown menu](http://mfcovington.github.io/jquery-playground/mobile-dropdown/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-mobile-drop-down-menu/) course. Change the width of the window to switch between the mobile and non-mobile menu versions.
 
-*Version 0.2.0*
+*Version 0.2.1*
