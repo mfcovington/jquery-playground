@@ -36,7 +36,7 @@ $('#addNewColor').click(function() {
 $sliderInputs.change(sliderEvent);
 
 function deselectColors() {
-    $('.controls li').siblings('li').each(function() {
+    $('.controls li').each(function() {
         $(this).removeClass('selected')
     });
 }
