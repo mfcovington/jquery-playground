@@ -4,7 +4,7 @@ $('.controls li').click(function() {
 });
 
 function deselectColors() {
-    $('.controls li').each(function() {
+    $('.controls li').siblings('li').each(function() {
         $(this).removeClass('selected')
     });
 }
