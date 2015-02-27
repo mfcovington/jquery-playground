@@ -1,8 +1,9 @@
 var $usernameInput = $('#username');
 var $passwordInput = $('#password');
 var $passwordConfirm = $('#confirm_password');
-
 var $submitButton = $('input[type="submit"]');
+
+$usernameInput.focus();
 enableSubmitEvent();
 
 function isUsernameValid() {
