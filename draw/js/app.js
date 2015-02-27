@@ -19,6 +19,8 @@ $('#addNewColor').click(function() {
     deselectColors();
     selectColor($newItem);
     $('.controls ul').append($newItem);
+
+    resetSlidersAndSwatch();
 });
 
 var $sliderInputs = $('.sliders input');
@@ -44,6 +46,13 @@ function sliderEvent() {
         rgbObject[color] = value;
     });
     updateNewColor(rgbObject);
+}
+
+function resetSlidersAndSwatch() {
+    $sliderInputs.each(function() {
+        $(this).val(0);
+    });
+    $('#newColor').css('background-color', '')
 }
 
 function updateNewColor(rgbObject) {
