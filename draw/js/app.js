@@ -8,6 +8,9 @@ resetSlidersAndSwatch();
 var $canvas = $('canvas');
 var context = $canvas[0].getContext('2d');
 context.strokeStyle = currentColor;
+context.lineWidth = 10;
+context.lineJoin = 'round';
+context.lineCap = 'round';
 
 var lastMouseEvent;
 var mouseDown = false;
