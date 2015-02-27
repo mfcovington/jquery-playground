@@ -56,12 +56,17 @@ p {
   color: #777;
 }
 
-@media (max-width: 568px) {
+@media (max-device-width: 568px) {
   #menu ul {
     display: none;
   }
 }
-@media (min-width: 569px) {
+@media (min-device-width: 569px) and (max-width: 568px) {
+  #menu ul {
+    display: none;
+  }
+}
+@media (min-device-width: 569px) and (min-width: 569px) {
   #menu select, #menu button {
     display: none;
   }
