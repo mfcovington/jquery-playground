@@ -14,4 +14,8 @@ I learned how to make a [mobile dropdown menu](http://mfcovington.github.io/jque
 
 I learned how to make a [password confirmation form](http://mfcovington.github.io/jquery-playground/password-confirmation/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-password-confirmation-form/) course.
 
+## Simple Drawing App
+
+I learned how to make a [simple drawing app](http://mfcovington.github.io/jquery-playground/draw/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-simple-drawing-application/) course.
+
 *Version 0.3.0*
