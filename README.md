@@ -1,6 +1,6 @@
 # jQuery Playground
 
-I'm learning JavaScript and jQuery. Here are some of my mini projects for learning from tutorials, etc.
+I'm learning JavaScript and jQuery. [Here](http://mfcovington.github.io/jquery-playground/index.html) are some of my mini projects for learning from tutorials, etc.
 
 ## Simple Lightbox
 
@@ -18,4 +18,4 @@ I learned how to make a [password confirmation form](http://mfcovington.github.i
 
 I learned how to make a [simple drawing app](http://mfcovington.github.io/jquery-playground/draw/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-simple-drawing-application/) course.
 
-*Version 0.3.0*
+*Version 0.4.0*
