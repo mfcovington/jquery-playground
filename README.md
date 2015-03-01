@@ -18,4 +18,4 @@ I learned how to make a [password confirmation form](http://mfcovington.github.i
 
 I learned how to make a [simple drawing app](http://mfcovington.github.io/jquery-playground/draw/) in Treehouse's [jQuery Basics](https://teamtreehouse.com/library/jquery-basics/creating-a-simple-drawing-application/) course.
 
-*Version 0.4.0*
+*Version 0.4.1*
