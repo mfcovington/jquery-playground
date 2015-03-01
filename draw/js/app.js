@@ -11,6 +11,8 @@ context.strokeStyle = currentColor;
 context.lineWidth = 10;
 context.lineJoin = 'round';
 context.lineCap = 'round';
+context.fillStyle = 'white';
+context.fillRect(0, 0, $canvas.width(), $canvas.height());
 
 var lastMouseEvent;
 var mouseDown = false;
