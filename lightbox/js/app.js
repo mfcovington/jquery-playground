@@ -7,11 +7,11 @@ $('body').append($overlay);
 
 var lightbox = {
 
-    show: function() {
+    show: function(event, $anchor) {
         event.preventDefault();
 
-        var imageLocation = $(this).attr('href');
-        var imageText = $(this).children('img').attr('alt');
+        var imageLocation = $anchor.attr('href');
+        var imageText = $anchor.children('img').attr('alt');
 
         $image.attr('src', imageLocation);
         $label.text(imageText);
@@ -31,7 +31,9 @@ var lightbox = {
 
 };
 
-$('#imageGallery a').click( lightbox.show );
+$('#imageGallery a').click(function(event) {
+    lightbox.show(event, $(this))
+});
 $overlay.click( lightbox.hide );
 
 $(window).resize( lightbox.resizeOverlay );
