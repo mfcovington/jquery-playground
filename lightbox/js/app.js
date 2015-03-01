@@ -16,6 +16,7 @@ var lightbox = {
         $image.attr('src', imageLocation);
         $label.text(imageText);
 
+        lightbox.resizeOverlay();
         $overlay.show();
     },
 
@@ -23,7 +24,14 @@ var lightbox = {
         $overlay.hide()
     },
 
+    resizeOverlay: function() {
+        $overlay.height( $(document).height() );
+        $overlay.width( $(document).width() );
+    }
+
 };
 
 $('#imageGallery a').click( lightbox.show );
 $overlay.click( lightbox.hide );
+
+$(window).resize( lightbox.resizeOverlay );
