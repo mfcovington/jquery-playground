@@ -135,3 +135,46 @@ $('#download').click(function() {
     });
     $imgLink[0].click();
 });
+
+var $info = $('#info');
+
+$('.controls').on('mouseenter', 'li', function() {
+    if ($(this).hasClass('selected')) {
+        $info.text('Double-click color to remove.');
+    }
+    else {
+        $info.text('Click color to choose. Double-click color to remove.');
+    }
+});
+
+$('.controls').on('click', 'li', function() {
+    $info.text('Double-click color to remove.');
+});
+
+$('.controls').on('mouseleave', 'li', function() {
+    $info.html('&nbsp;');
+});
+
+$('#download').hover(function() {
+    $info.text('Click to download your masterpiece!');
+}, function() {
+    $info.html('&nbsp;');
+});
+
+$('#clear').hover(function() {
+    $info.text('Click to clear the canvas.');
+}, function() {
+    $info.html('&nbsp;');
+});
+
+$('#revealColorSelect').hover(function() {
+    $info.text('Click to mix a new color.');
+}, function() {
+    $info.html('&nbsp;');
+});
+
+$('#addNewColor').hover(function() {
+    $info.text('Click to add the new color to your palette.');
+}, function() {
+    $info.html('&nbsp;');
+});
