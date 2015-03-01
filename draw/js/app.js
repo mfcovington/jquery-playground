@@ -12,7 +12,12 @@ context.lineWidth = 10;
 context.lineJoin = 'round';
 context.lineCap = 'round';
 context.fillStyle = 'white';
-context.fillRect(0, 0, $canvas.width(), $canvas.height());
+
+var $clearCanvas = $('#clear');
+$clearCanvas.click(function() {
+    context.fillRect(0, 0, $canvas.width(), $canvas.height());
+});
+$clearCanvas.click();
 
 var lastMouseEvent;
 var mouseDown = false;
