@@ -118,3 +118,13 @@ $canvas.click(function(event) {
 $('html').mouseup(function() {
     mouseDown = false;
 });
+
+$('#download').click(function() {
+    var dataURL = $canvas[0].toDataURL();
+    var filename = 'masterpiece.png';
+    var $imgLink = $('<a></a>').attr({
+        href: dataURL,
+        download: filename,
+    });
+    $imgLink[0].click();
+});
