@@ -132,6 +132,7 @@ $('#download').click(function() {
     var $imgLink = $('<a></a>').attr({
         href: dataURL,
         download: filename,
+        target: '_blank',
     });
     $imgLink[0].click();
 });
