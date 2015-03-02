@@ -146,3 +146,10 @@ button {
   text-shadow: 0 1px black;
   font-size: 12px;
 }
+
+#buttons {
+  text-align: center;
+}
+#buttons button {
+  display: inline-block;
+}
