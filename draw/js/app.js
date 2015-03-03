@@ -1,7 +1,11 @@
-$('html').disableSelection();
-
 // Check if browser is Firefox: http://stackoverflow.com/a/26358856/996114
 var isFirefox = navigator.userAgent.indexOf("Firefox") != -1;
+
+if (!isFirefox) {
+    // Don't select elements when double-clicking to delete colors.
+    // However, can't adjust sliders in Firefox if selection is disabled.
+    $('html').disableSelection();
+}
 
 var currentColor = $('.controls .selected').css('background-color');
 
