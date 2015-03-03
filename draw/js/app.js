@@ -147,7 +147,7 @@ $canvas.mousedown(function(event) {
     mouseDown = false;
 }).mouseleave(function() {
     mouseOnCanvas = false;
-}).mouseenter(function() {
+}).mouseenter(function(event) {
     lastMouseEvent = event;
     mouseOnCanvas = true;
 });
