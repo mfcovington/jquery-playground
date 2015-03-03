@@ -110,35 +110,12 @@ $canvas.mousedown(function(event) {
     mouseDown = true;
 }).mousemove(function(event) {
     if (mouseDown && mouseOnCanvas) {
-
-        var oldX;
-        var oldY;
-        var newX;
-        var newY;
-
-        // https://teamtreehouse.com/forum/this-wont-work-in-firefox-out-of-the-box-i-made-a-change-to-the-mousemove-function-to-make-it-compatible-with-ff
-        if (isFirefox) {
-            // this should work for Firefox
-            oldX = lastMouseEvent.pageX - $canvas.offset().left;
-            oldY = lastMouseEvent.pageY - $canvas.offset().top;
-        }
-        else {
-            oldX = lastMouseEvent.offsetX;
-            oldY = lastMouseEvent.offsetY;
-        }
-
-        if (isFirefox) {
-            newX = event.pageX - $canvas.offset().left;
-            newY = event.pageY - $canvas.offset().top;
-        }
-        else {
-            newX = event.offsetX;
-            newY = event.offsetY;
-        }
+        var oldPos = getXY(lastMouseEvent, $canvas);
+        var newPos = getXY(event, $canvas);
 
         context.beginPath();
-        context.moveTo(oldX, oldY);
-        context.lineTo(newX, newY);
+        context.moveTo(oldPos.x, oldPos.y);
+        context.lineTo(newPos.x, newPos.y);
         context.strokeStyle = currentColor;
         context.stroke();
         lastMouseEvent = event;
@@ -153,21 +130,11 @@ $canvas.mousedown(function(event) {
 });
 
 $canvas.click(function(event) {
-    var clickX;
-    var clickY;
-
-    if (isFirefox) {
-        clickX = event.pageX - $canvas.offset().left;
-        clickY = event.pageY - $canvas.offset().top;
-    }
-    else {
-        clickX = event.offsetX;
-        clickY = event.offsetY;
-    }
+    var clickPos = getXY(event, $canvas);
 
     context.beginPath();
-    context.moveTo(clickX, clickY);
-    context.lineTo(clickX + 0.1, clickY);
+    context.moveTo(clickPos.x, clickPos.y);
+    context.lineTo(clickPos.x + 0.1, clickPos.y);
     context.strokeStyle = currentColor;
     context.stroke();
 });
@@ -244,3 +211,20 @@ $('#addNewColor').hover(function() {
 }, function() {
     $info.html('&nbsp;');
 });
+
+function getXY(event, $canvas) {
+    if (isFirefox) {
+        // this should work for Firefox
+        x = event.pageX - $canvas.offset().left;
+        y = event.pageY - $canvas.offset().top;
+    }
+    else {
+        x = event.offsetX;
+        y = event.offsetY;
+    }
+
+    return {
+        x: x,
+        y: y,
+    };
+}
