@@ -110,9 +110,35 @@ $canvas.mousedown(function(event) {
     mouseDown = true;
 }).mousemove(function(event) {
     if (mouseDown && mouseOnCanvas) {
+
+        var oldX;
+        var oldY;
+        var newX;
+        var newY;
+
+        // https://teamtreehouse.com/forum/this-wont-work-in-firefox-out-of-the-box-i-made-a-change-to-the-mousemove-function-to-make-it-compatible-with-ff
+        if (isFirefox) {
+            // this should work for Firefox
+            oldX = lastMouseEvent.pageX - $canvas.offset().left;
+            oldY = lastMouseEvent.pageY - $canvas.offset().top;
+        }
+        else {
+            oldX = lastMouseEvent.offsetX;
+            oldY = lastMouseEvent.offsetY;
+        }
+
+        if (isFirefox) {
+            newX = event.pageX - $canvas.offset().left;
+            newY = event.pageY - $canvas.offset().top;
+        }
+        else {
+            newX = event.offsetX;
+            newY = event.offsetY;
+        }
+
         context.beginPath();
-        context.moveTo(lastMouseEvent.offsetX, lastMouseEvent.offsetY);
-        context.lineTo(event.offsetX, event.offsetY);
+        context.moveTo(oldX, oldY);
+        context.lineTo(newX, newY);
         context.strokeStyle = currentColor;
         context.stroke();
         lastMouseEvent = event;
@@ -127,9 +153,21 @@ $canvas.mousedown(function(event) {
 });
 
 $canvas.click(function(event) {
+    var clickX;
+    var clickY;
+
+    if (isFirefox) {
+        clickX = event.pageX - $canvas.offset().left;
+        clickY = event.pageY - $canvas.offset().top;
+    }
+    else {
+        clickX = event.offsetX;
+        clickY = event.offsetY;
+    }
+
     context.beginPath();
-    context.moveTo(event.offsetX, event.offsetY);
-    context.lineTo(event.offsetX + 0.1, event.offsetY);
+    context.moveTo(clickX, clickY);
+    context.lineTo(clickX + 0.1, clickY);
     context.strokeStyle = currentColor;
     context.stroke();
 });
