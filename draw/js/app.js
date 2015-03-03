@@ -10,6 +10,11 @@ if (!isFirefox) {
 var currentColor = $('.controls .selected').css('background-color');
 
 var $sliderInputs = $('.sliders input[type=range]');
+
+if (isFirefox) {
+    $sliderInputs.css('float', 'right');
+}
+
 resetSlidersAndSwatch();
 
 var $canvas = $('canvas');
