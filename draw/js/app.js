@@ -1,5 +1,8 @@
 $('html').disableSelection();
 
+// Check if browser is Firefox: http://stackoverflow.com/a/26358856/996114
+var isFirefox = navigator.userAgent.indexOf("Firefox") != -1;
+
 var currentColor = $('.controls .selected').css('background-color');
 
 var $sliderInputs = $('.sliders input[type=range]');
