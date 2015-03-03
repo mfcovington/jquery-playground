@@ -184,7 +184,22 @@ $('#download').click(function() {
         download: filename,
         target: '_blank',
     });
-    $imgLink[0].click();
+
+    if (isFirefox) {
+        // http://bugs.jquery.com/ticket/14761
+        // http://jsfiddle.net/D572L/
+        // For Firefox, we need to manually do a click event
+
+        // Create event
+        var event = document.createEvent("MouseEvents");
+        event.initMouseEvent("click", true, false, self, 0, 0, 0, 0, 0, false,
+            false, false, false, 0, null);
+        // Fire event
+        $imgLink[0].dispatchEvent(event);
+    }
+    else {
+        $imgLink[0].click();
+    }
 });
 
 var $info = $('#info');
