@@ -1,0 +1,5 @@
+.fading-list li {
+  background-color: #6495ed;
+  display: block;
+  list-style: none;
+}
