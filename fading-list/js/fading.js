@@ -1,33 +1,24 @@
-var $fading_list = $('.fading-list');
-var $list_items = $fading_list.find('li')
-var item_count = $list_items.length;
+var $fadingList = $('.fading-list');
+var $listItems = $fadingList.find('li');
+var itemCount = $listItems.length;
 
-var item_number = 0;
-$list_items.each(function(){
-    var $item = $(this);
-    $item.css('opacity', 1 - item_number / item_count);
-    item_number++;
+fadeListItems($listItems, 0, itemCount);
+
+$fadingList.on('click', 'li', function() {
+    var $clickedItem = $(this);
+
+    var clickedOpacity = $clickedItem.css('opacity');
+    console.log('Opacity: ' + clickedOpacity);
+
+    $clickedItem.css('opacity', 1);
+    fadeListItems($clickedItem.nextAll('li'), 1, itemCount);
+    fadeListItems($clickedItem.prevAll('li'), 1, itemCount);
 });
 
-$fading_list.on('click', 'li', function(event) {
-    event.preventDefault();
-
-    var $clicked_item = $(this);
-    console.log($clicked_item.css('opacity'));
-
-    $clicked_item.css('opacity', 1);
-
-    var item_number = 1;
-    $clicked_item.nextAll('li').each(function(){
+function fadeListItems($adjacentItems, itemNumber, itemCount) {
+    $adjacentItems.each(function(){
         var $item = $(this);
-        $item.css('opacity', 1 - item_number / item_count);
-        item_number++;
+        $item.css('opacity', 1 - itemNumber / itemCount);
+        itemNumber++;
     });
-
-    var item_number = 1;
-    $clicked_item.prevAll('li').each(function(){
-        var $item = $(this);
-        $item.css('opacity', 1 - item_number / item_count);
-        item_number++;
-    });
-});
+}
