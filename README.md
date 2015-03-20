@@ -22,4 +22,4 @@ I learned how to make a [simple drawing app](http://mfcovington.github.io/jquery
 
 I was thinking about the CSS pseudo-selectors `:nth-child` and `:nth-of-type` and how they can be used to style list in cool ways. It made me start thinking about more complex list style patterns. I started playing around with JavaScript and made what I'm calling a [fading list](http://mfcovington.github.io/jquery-playground/fading-list/).
 
-*Version 0.5.1*
+*Version 0.5.2*
