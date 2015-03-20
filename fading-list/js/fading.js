@@ -22,3 +22,15 @@ function fadeListItems($adjacentItems, itemNumber, itemCount) {
         itemNumber++;
     });
 }
+
+$fadingList.click(function() {
+    $listItems.css('background-color', randomColor());
+});
+
+function randomColor() {
+    var r = Math.floor(256 * Math.random());
+    var g = Math.floor(256 * Math.random());
+    var b = Math.floor(256 * Math.random());
+    // return [ r, g, b ];
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')' ;
+}
