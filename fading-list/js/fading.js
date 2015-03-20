@@ -27,6 +27,10 @@ $fadingList.click(function() {
     $listItems.css('background-color', randomColor());
 });
 
+$fadingList.dblclick(function() {
+    $listItems.css('background-color', randomColor);
+});
+
 function randomColor() {
     var r = Math.floor(256 * Math.random());
     var g = Math.floor(256 * Math.random());
