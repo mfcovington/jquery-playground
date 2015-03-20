@@ -4,7 +4,7 @@ var itemCount = $listItems.length;
 
 fadeListItems($listItems, 0, itemCount);
 
-$fadingList.on('click', 'li', function() {
+$fadingList.on('mouseover', 'li', function() {
     var $clickedItem = $(this);
 
     var clickedOpacity = $clickedItem.css('opacity');
