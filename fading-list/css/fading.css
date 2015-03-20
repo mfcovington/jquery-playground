@@ -9,3 +9,17 @@
   padding: 0;
   margin: 0;
 }
+
+header {
+  text-align: center;
+  margin: 20px;
+}
+
+header h2 {
+  opacity: 0.5;
+}
+
+header h3 {
+  margin-top: 5px;
+  opacity: 0.2;
+}
