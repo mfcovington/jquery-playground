@@ -2,6 +2,8 @@ var $fadingList = $('.fading-list');
 var $listItems = $fadingList.find('li');
 var itemCount = $listItems.length;
 
+$fadingList.disableSelection();
+
 fadeListItems($listItems, 0, itemCount);
 
 $fadingList.on('mouseover', 'li', function() {
