@@ -31,3 +31,10 @@ header h3,
 header h4 {
   margin-top: 5px;
 }
+
+@media screen and (max-device-width: 736px) {
+  .fading-list:after {
+    content: "*** Not fully functional on iPhones, etc. ***";
+    color: gray;
+  }
+}
