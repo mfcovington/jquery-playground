@@ -1,8 +1,9 @@
 var $fadingList = $('.fading-list');
 var $listItems = $fadingList.find('li');
 var itemCount = $listItems.length;
+var $html = $('html');
 
-$fadingList.disableSelection();
+$html.disableSelection();
 
 fadeListItems($listItems, 0, itemCount);
 
@@ -25,11 +26,11 @@ function fadeListItems($adjacentItems, itemNumber, itemCount) {
     });
 }
 
-$fadingList.click(function() {
+$html.click(function() {
     $listItems.css('background-color', randomColor());
 });
 
-$fadingList.dblclick(function() {
+$html.dblclick(function() {
     $listItems.css('background-color', randomColor);
 });
 
